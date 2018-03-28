@@ -5,7 +5,7 @@ from sklearn import tree
 from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd
 
-
+"""
 def VDR(cols, X, y, clf):
     x_min, x_max = X[:, cols[0]].min() - 1, X[:, cols[0]].max() + 1
     y_min, y_max = X[:, cols[1]].min() - 1, X[:, cols[1]].max() + 1
@@ -18,8 +18,9 @@ def VDR(cols, X, y, clf):
     axis_ = fig_.add_subplot(111)
     axis_.scatter(X[:, cols[0]], X[:, cols[1]], c=y, s=20, edgecolor='k')
     axis_.contourf(xx, yy, Z, alpha=0.4)
+    plt.legend(loc = 'lower right')
     plt.show()
-
+"""
 
 def Visual_Dec_Tree(X, trees):
     dotfile = open("dtree2.dot", 'w')
@@ -66,7 +67,7 @@ def Visual_Logistic( X, y, clf):
     contour = ax.contourf(xx, yy, probs, 25, cmap="RdBu",
                       vmin=0, vmax=1)
     ax_c = f.colorbar(contour)
-    ax_c.set_label("$P($",y.columns,')')
+    ax_c.set_label("$P(y = 1)$")
     ax_c.set_ticks([0, .25, .5, .75, 1])
 
     ax.scatter(X.iloc[:,0], X.iloc[:, 1], c=y, s=50,
@@ -85,7 +86,6 @@ def Visual_Logistic( X, y, clf):
     
     
 
-"""
 def VDR(X, y, classifier, test_idx=None, resolution=0.02):
    # setup marker generator and color map
    markers = ('s', 'x', 'o', '^', 'v')
@@ -117,5 +117,3 @@ def VDR(X, y, classifier, test_idx=None, resolution=0.02):
                s=55, label='test set')
    plt.legend(loc = 'upper left')
 
-"""
-    
