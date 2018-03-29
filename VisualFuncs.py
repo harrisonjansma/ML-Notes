@@ -4,6 +4,7 @@ from os import system
 from sklearn import tree
 from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd
+from matplotlib.colors import ListedColormap
 
 """
 def VDR(cols, X, y, clf):
