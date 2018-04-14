@@ -15,16 +15,25 @@ titanic['Surname'] = titanic.Name_Mod.apply(lambda x: x[0][:-1])
 titanic['Title'] = titanic.Name_Mod.apply(lambda x: x[1])
 titanic = titanic.drop(['Ticket', 'Name', 'Name_Mod', 'Cabin'], axis = 1)
 
-titanic.info()
+#dropping the Names
+titanic = titanic.iloc[:,:-2]
+
+
 # drop the NaN Values. (Could find a way to impute, but that is an exercise for another day)
 titanic  = titanic.dropna()
-titanic.info()
-from sklearn.preprocessing import LabelEncoder
-le = LabelEncoder()
-titanic.Sex = le.fit_transform(titanic.Sex)
-titanic.Embarked = le.fit_transform(titanic.Embarked)
-titanic.head()
+titanic = pd.get_dummies(titanic)
+
+
+
+
+titanic_scaled = titanic.copy()
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+q = sc.fit_transform(titanic_scaled.loc[:,['Age', 'Fare']])
+titanic_scaled['Age']= q[:, 0]
+titanic_scaled['Fare'] = q[:,1]
+
 
 
 from scipy import stats
-OutTitanic = titanic[(np.abs(stats.zscore(titanic[['Age','Fare']])) < 3).all(axis=1)]
+titanic = titanic[(np.abs(stats.zscore(titanic[['Age','Fare']])) < 4).all(axis=1)]
