@@ -37,3 +37,17 @@ titanic_scaled['Fare'] = q[:,1]
 
 from scipy import stats
 titanic = titanic[(np.abs(stats.zscore(titanic[['Age','Fare']])) < 4).all(axis=1)]
+
+
+def autolabel(rects, ax):
+    """
+    Attach a text label above each bar displaying its height
+    """
+    counter = 0
+    for rect in rects:
+        height = rect.get_height()
+        ax.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                '%d' % int(titanic.Survived.value_counts()[counter]),
+                ha='center', va='bottom')
+        counter+=1
+        
