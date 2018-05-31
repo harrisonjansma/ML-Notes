@@ -60,9 +60,9 @@ def LogisticVDR( X, y, clf):
     
     
 
-def VDR(X, y, classifier, resolution=0.02):
+def VDR(X, y, classifier, resolution=0.02, figsize = (12,8), class_names=['class1', 'class2']):
    # setup marker generator and color map
-   markers = ('s', 'x', 'o', '^', 'v')
+   markers = ('s', 'o', '^', 'v')
    colors = ('red', 'green', 'purple', 'blue', 'cyan')
    cmap = ListedColormap(colors[:len(np.unique(y))])
 
@@ -73,17 +73,19 @@ def VDR(X, y, classifier, resolution=0.02):
    np.arange(x2_min, x2_max, resolution))
    Z = classifier.predict(np.array([xx1.ravel(), xx2.ravel()]).T)
    Z = Z.reshape(xx1.shape)
-   plt.contourf(xx1, xx2, Z, alpha=0.6, cmap='Accent')
+   plt.figure(figsize=figsize)
+   plt.contourf(xx1, xx2, Z, alpha=0.5, cmap= cmap)
    plt.xlim(xx1.min(), xx1.max())
    plt.ylim(xx2.min(), xx2.max())
 
    # plot all samples
    X_test, y_test = X[:, :], y[:]
+   
    for idx, cl in enumerate(np.unique(y)):
       plt.scatter(x=X[y == cl, 0], y=X[y == cl, 1],
                alpha=0.8, c=cmap(idx),
-               marker=markers[idx], label=cl)
-   
+               marker=markers[idx], label=class_names[idx])
+   plt.legend()
    return None
 
 
