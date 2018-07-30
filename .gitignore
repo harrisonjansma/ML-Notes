@@ -8,11 +8,11 @@ __pycache__/
 
 
 
-/.local/*
-/.ipython/*
-/.ipynb_checkpoints/*
-/.idea/*
-/lib64/*
+/.local/
+/.ipython/
+/.ipynb_checkpoints/
+/.idea/
+
 
 # Distribution / packaging
 .Python
@@ -26,6 +26,7 @@ eggs/
 lib/
 parts/
 sdist/
+lib64/
 var/
 wheels/
 *.egg-info/
