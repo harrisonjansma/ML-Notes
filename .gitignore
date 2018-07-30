@@ -16,6 +16,10 @@ downloads/
 eggs/
 .eggs/
 lib/
+.local/
+.ipython/
+.ipynb_checkpoints/
+.idea/
 lib64/
 parts/
 sdist/
