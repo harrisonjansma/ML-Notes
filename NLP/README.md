@@ -1,6 +1,6 @@
 # Notes on NLP
 
-This directory contains notes on a few implementations of NLP tools. I go over Spacy, regular expessions, and web scraping. 
+This directory contains notes on a few implementations of NLP tools. I go over Spacy, regular expessions, and web scraping. The project that came out of this course of study is my <a href="http://www.harrisonjansma.com/apple.html">Apple Sentiment Analysis</a> writeup which can be found in this directory, as well as my portfolio website. (www.harrisonjansma.com)
 
 ## Skills Covered
 
