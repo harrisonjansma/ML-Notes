@@ -8,7 +8,7 @@ This directory contains notes on a few implementations of NLP tools. I go over S
 
 <a href="https://github.com/harrisonjansma/ML-Notes/blob/master/NLP/WebScrapeRegex/Regular%20Expressions.ipynb"> [2] </a> Regular Expression Usages (Pattern matching in text.)
 
-<a href-"https://github.com/harrisonjansma/ML-Notes/blob/master/NLP/WebScrapeRegex/Web_Scraping.ipynb">[2]</a> Web scraping w/ Beautiful Soup
+<a href="https://github.com/harrisonjansma/ML-Notes/blob/master/NLP/WebScrapeRegex/Web_Scraping.ipynb">[2]</a> Notes on Web scraping w/ Beautiful Soup
 
 ## Skill Implementations
 
